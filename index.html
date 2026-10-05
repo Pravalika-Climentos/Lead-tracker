@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Lead Status | CRMS</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#" aria-label="CRMS lead status"><span>✦</span> CRMS</a><div class="connection"><i id="connectionDot"></i><span id="connectionText">Connecting…</span></div></header>
+  <main class="shell">
+    <section id="invalidView" class="state-card hidden"><div class="state-icon">!</div><h1>Tracker link unavailable</h1><p id="invalidMessage">This link is invalid, expired, or has been disabled. Ask the CRM administrator for an active link.</p></section>
+    <div id="appView" class="hidden">
+      <section class="hero"><div><span class="eyebrow">Organization lead tracker</span><h1 id="organizationName">Lead Status</h1><p>Read-only, up-to-date progress for all organization leads.</p></div><button id="refreshButton" class="button secondary" type="button">↻ Refresh</button></section>
+      <section id="summary" class="summary" aria-label="Lead summary">
+        <article><span>Total leads</span><strong id="totalCount">—</strong></article><article><span>New</span><strong id="newCount">—</strong></article><article><span>In progress</span><strong id="activeCount">—</strong></article><article><span>Converted</span><strong id="convertedCount">—</strong></article>
+      </section>
+      <section class="workspace">
+        <div class="toolbar"><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search lead name or reference" autocomplete="off"></label><select id="assigneeFilter" aria-label="Filter by assignee"><option value="">All assignees</option></select><select id="statusFilter" aria-label="Filter by status"><option value="">All statuses</option></select></div>
+        <div id="listError" class="inline-alert hidden"></div>
+        <div id="loading" class="skeleton-list" aria-label="Loading leads"><div></div><div></div><div></div><div></div></div>
+        <div class="table-wrap"><table id="leadTable" class="hidden"><thead><tr><th>Lead</th><th>Reference</th><th>Assignee</th><th>Status</th><th>Source</th><th>Last updated</th><th></th></tr></thead><tbody id="leadRows"></tbody></table></div>
+        <div id="emptyState" class="empty hidden"><span>⌕</span><h2>No leads found</h2><p>Try changing the search text or status filter.</p></div>
+        <footer class="pagination"><span id="pageInfo"></span><div><button id="previousButton" class="button secondary" type="button">Previous</button><button id="nextButton" class="button secondary" type="button">Next</button></div></footer>
+      </section>
+      <p class="privacy-note">This portal is read-only. Sensitive contact information, values, notes and internal identifiers are hidden.</p>
+    </div>
+  </main>
+  <div id="detailBackdrop" class="backdrop hidden"><section class="detail" role="dialog" aria-modal="true" aria-labelledby="detailName"><button id="detailClose" class="close" type="button" aria-label="Close">×</button><span class="eyebrow">Lead details</span><h2 id="detailName"></h2><div class="detail-meta"><div><small>Reference</small><strong id="detailReference"></strong></div><div><small>Assignee</small><strong id="detailAssignee"></strong></div><div><small>Status</small><strong id="detailStatus" class="pill"></strong></div><div><small>Source</small><strong id="detailSource"></strong></div><div><small>Last updated</small><strong id="detailUpdated"></strong></div></div><h3>Status timeline</h3><div id="detailTimeline" class="timeline"></div></section></div>
+  <script src="config.js?v=2"></script><script src="app.js?v=2"></script>
+</body>
+</html>

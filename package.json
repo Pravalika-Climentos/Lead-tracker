@@ -1,0 +1,8 @@
+{
+  "name": "crms-lead-status-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Read-only organization lead status portal for CRMS",
+  "scripts": { "start": "node server.mjs" },
+  "engines": { "node": ">=18" }
+}
